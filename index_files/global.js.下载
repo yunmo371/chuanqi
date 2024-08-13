@@ -1,0 +1,318 @@
+try{$("#nav").html('<ul class="clearfix">\
+          	<li>\
+            	<a href="home.html" class="lv1-link">热血传奇官网<i>home</i></a>\
+              <!--<div class="Lv2Box"><p>\
+              	<a target="_blank" href="https://imir.web.sdo.com/web1/home/index.asp">传奇归来</a>\
+                <a target="_blank" href="https://mir2x.web.sdo.com/web1/home/index.asp">传奇续章</a>\
+                <a target="_blank" href="https://mirs.web.sdo.com/web7/home/index.asp">传奇外传</a>\
+                <a target="_blank" href="https://mir2s.web.sdo.com/web1/home/index.asp">1.76秒卡版</a>\
+				<a target="_blank" href="https://mir2t.web.sdo.com/web1/index.html">秒卡版官网</a>\
+				<a target="_blank" href="https://mirt.web.sdo.com/web1/index.html">怀旧版官网</a>\
+							</p></div>-->\
+            </li>\
+			<li>\
+            	<a target="_blank" href="http://100.mir2.sdo.com/" class="lv1-link">新百区官网<i>home</i></a>\
+            </li>\
+            <li>\
+            	<a href="download.html" class="lv1-link">精彩下载<i>download</i></a>\
+              <div class="Lv2Box"><p>\
+              	<a href="download.html">客户端下载</a>\
+                <a href="https://actmir2.web.sdo.com/project/20160906/image.html" target="_blank">壁纸下载</a>\
+              </p></div>\
+            </li>\
+            <li>\
+            	<a href="javascript:;" class="lv1-link">玩家互动<i>interaction</i></a>\
+              <div class="Lv2Box"><p>\
+              	<a href="article.html">热血通讯社</a>\
+				<a href="http://www.daoyu8.com/#/circle?circleId=854694">玩家论坛</a>\
+              </p></div>\
+            </li>\
+            <li>\
+            	<a href="pay.html" class="lv1-link">购卡充值<i>purchase</i></a>\
+              <div class="Lv2Box"><p>\
+              	<a href="pay.html">我要买卡</a>\
+                <a target="_blank" href="https://pay.sdo.com/item/GWPAY-4">我要充值</a>\
+                <a target="_blank" href="http://kf.sdo.com">充值热点问题</a>\
+              </p></div>\
+            </li>\
+            <li>\
+            	<a href="freshmen.html?CategoryID=5500" class="lv1-link">用户服务<i>user</i></a>\
+              <div class="Lv2Box"><p>\
+              	<a target="_blank" href="https://chuanqi.web.sdo.com/project/cqRegister/index.html?game=mir2">免费注册</a>\
+                <a href="http://kf.sdo.com/faq/list?type=4" target="_blank">安全指南</a>\
+                <a target="_blank" href="http://safe.sdo.com/home/ekey">账号安全</a>\
+                <a target="_blank" href="http://safe.sdo.com/home/getBackPwd">密码找回</a>\
+                <a target="_blank" href="http://kf.sdo.com/kf/mir2.aspx">装备找回</a>\
+				 <a target="_blank" href="newsdetail.html?id=15513">用户协议</a>\
+				 <a target="_blank" href="newsdetail.html?id=16897">隐私政策</a>\
+              </p></div>\
+            </li>\
+            <li>\
+            	<a href="http://kf.sdo.com/" class="lv1-link">客服专区<i>service</i></a>\
+				<div class="Lv2Box"><p>\
+              	<a target="_blank" href="http://kf.sdo.com/">客服专区</a>\
+                <a target="_blank" href="http://vip.sdo.com/">心享服务</a>\
+              </p></div>\
+            </li>\
+			<li>\
+            	<a href="http://vip.sdo.com/yx/mir2/index.html" class="lv1-link" target="_blank">传奇悦享会<i>CLUB</i></a>\
+            </li>\
+          </ul>').find(".Lv2Box").parent().hover(function(){
+	var that=$(this);that.addClass('active').children(".Lv2Box").stop(true,true).delay(100).slideDown(400,function(){!that.hasClass('active')?that.addClass('active'):'';});
+	},function(){
+	var that=$(this);that.children(".Lv2Box").stop(true,true).slideUp(400,function(){that.removeClass('active');});	
+	})
+
+$("#pageleft").html('<div class="Buts box01 am">\
+            <a href="download.html" target="_blank" class="download ts"></a>\
+            <a href="https://actmir2.web.sdo.com/project/jhtd/index.html" target="_blank" class="gift"><img src="https://static.web.sdo.com/mir2/pic/mir2/web7/giftbox.png" /></a>\
+            <div class="link clearfix">\
+              <a href="https://chuanqi.web.sdo.com/project/cqRegister/index.html?game=mir2" target="_blank">注册账号</a>\
+              <a href="https://pay.sdo.com/Index.aspx?type=bank&game=4" target="_blank">我要充值</a>\
+            </div>\
+            <div class="weibo boc">\
+              <h4>热血传奇官方微博</h4>\
+              <p class="clearfix">\
+                <a href="http://weibo.com/mir2guanfang" target="_blank" class="sina ts">新浪微博<i></i></a>\
+              </p>\
+            </div>\
+          </div>\
+          <div class="box01 smallad" id="LeftSmallAd"></div>');
+
+/*新版适龄提示*/
+$("#top").append("<div class='ageTips'><a href='https://actmir2.web.sdo.com/project/ageTips/index.html' target='_blank'><img src='https://static.web.sdo.com/mir2/pic/mir2/ageTips/icon_Agetips-115.png'></a></div>")
+
+
+if($("#hideTop").length==1){
+	$(window).scroll(function(){
+		var t=document.body.scrollTop||document.documentElement.scrollTop;
+		if(t>300){$("#hideTop").show();}
+		else{$("#hideTop").hide();}
+	})
+}
+
+if($("#LeftSmallAd").length==1){
+	$.get(
+      "../handler/GetPortalList.asp",
+      {"id":1008},
+      function(data){
+          if(data.returncode==1){
+						var i=0,adAry=data.data,len=(!adAry?0:adAry.length),adhtml='';
+            for(;i<len;i++){
+              adhtml+='<a href="'+adAry[i].Url+'" title="'+adAry[i].Title+'" class="ts"><img src="'+adAry[i].Pic+'" /></a>';
+            }
+            $("#LeftSmallAd").html(adhtml);
+            }
+        },
+      'json');
+	}
+
+//加载slogan图片
+$.get("../handler/GetPortalList.asp",{"id":1026},function(data){if(data.returncode==1){$("#wrapper,#main,#pagemain").css("backgroundImage","url("+(data.data[0].Pic||data.data[0].Url||"https://static.web.sdo.com/mir2/pic/mir2/web7/wrapper.jpg")+")");}},'json');
+
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?361a0d509e0f95e59d89359cb125a6ac";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+}catch(e){
+	location.reload(true);
+}
+			
+function gototop(){
+	$("html,body").animate({scrollTop:"0px"},500);
+}
+
+function copyIt(showlink,ctitle){
+	var clipBoardContent=ctitle+"_热血传奇";
+    clipBoardContent+=showlink;
+	try{
+		window.clipboardData.setData("Text",clipBoardContent);
+		alert("复制成功，请粘贴到你的微信\QQ上推荐给你的好友");
+	}
+	catch (e){
+		window.prompt("复制以下内容，请粘贴到你的微信\QQ上推荐给你的好友",clipBoardContent);
+	}
+}
+
+//彩虹帮助
+function loadHelpConfig(){
+	var script_string = "";
+	$(function () {
+			setTimeout(function () {
+					this.dr = document.write;
+					document.write = function (evil) {script_string += evil;}
+					$.ajax({
+							dataType:'script',
+							scriptCharset:'utf-8',
+							url:'http://app.help.sdo.com/app_4-4000-1-10-10-chbzweb-0_help.js',
+							success:function(){
+									$('.helpBox').append(script_string);
+									document.write = this.dr;
+									$('.helpBox').css({'width':'178px','height':'30px','margin':'0 auto','background':'url(https://static.web.sdo.com/mir2/pic/mir2/web6/images/bgSubCh.png) 0 2px no-repeat'});
+									$('.helpBox .search_bar').css({'height':'29px'});
+									$('.helpBox .search_bar .inside_box').css({'width':'180px','height':'30px'});                                
+									$('.helpBox').find('.searchBox').css({'width':'','height':'','background':'none','padding':'0'});
+									$('.helpBox').find('.search').css({'width':'152px','border':'0','padding':'2px 0 0 0','color':'#a4a4a4','height':'20px','line-height':'20px'});
+									$('.helpBox').find('.btn').css({'width': '25px', 'margin': '0', 'background': 'transparent'});
+									$('body').css({'height': 'auto', 'min-height': '100%'});
+							}
+					})
+			}, 1000)
+	})
+}
+//$(window).load(function(){loadHelpConfig();})
+/**
+ +----------------------------------------------------------
+ * 获取URL参数
+ +----------------------------------------------------------
+ */
+function getURLPara(str){
+	var ary=[],obj={},wls=window.location.search,temp='',i=0;
+	if(wls!==""){
+		if(wls.indexOf("&")!=-1){ary=wls.substring(1).split("&");}
+		else{ary[0]=wls.substring(1)}
+		i=ary.length;
+		for(;i--;){
+			if(ary[i].indexOf('=')>-1){
+				temp=ary[i].split("=");
+				obj[temp[0]]=decodeURIComponent(temp[1].toString().replace(/\+/g,"%20"));
+				//console.log(obj[temp[0]]);
+			}
+		}
+	}
+	if(str){return obj[str];}
+	else{return obj;}
+}
+/**
+ +----------------------------------------------------------
+ * 查询字符串参数转对象
+ +----------------------------------------------------------
+ */
+function searchStrToObject(str){
+	var ary=[],obj={},temp='',i=0;
+	if(str!==""){
+		if(str.indexOf("&")!=-1){ary=str.split("&");}
+		else{ary[0]=str.substring(1)}
+		i=ary.length;
+		for(;i--;){
+			temp=ary[i].split("=");
+			if(!obj[temp[0]]){obj[temp[0]]=decodeURIComponent(temp[1].replace(/\+/g,"%20"));}
+			else{obj[temp[0]]+=","+decodeURIComponent(temp[1].replace(/\+/g,"%20"));}
+			}
+		}
+	return obj;
+}
+/**
+ +----------------------------------------------------------
+ * 对象转查询字符串
+ +----------------------------------------------------------
+ */
+function ObjectTosearchStr(obj){
+	var temp='';
+	if((typeof obj)=="object"){
+		for(k in obj){
+			if(k.indexOf('javascript')>-1||k.indexOf('domxssExecutionSink')>-1||k.indexOf('script')>-1||k.indexOf('alert')>-1||k.indexOf('(')>-1||k.indexOf('<')>-1||k.indexOf(')')>-1||k.indexOf('>')>-1){
+				continue;
+			}else if(obj[k].indexOf('javascript')>-1||obj[k].indexOf('domxssExecutionSink')>-1||obj[k].indexOf('script')>-1||obj[k].indexOf('alert')>-1||obj[k].indexOf('(')>-1||obj[k].indexOf('<')>-1||obj[k].indexOf(')')>-1||obj[k].indexOf('>')>-1){
+				continue;
+			}else if((typeof obj[k])=="number"||((typeof obj[k])=="string"&&obj[k].length>0)){
+				temp+=("&"+k+"="+obj[k]);
+			}
+		}
+		/*for(k in obj){
+			if(k.indexOf('javascript')>-1||k.indexOf('domxssExecutionSink')>-1||k.indexOf('script')>-1||k.indexOf('alert')>-1||k.indexOf('(')>-1||k.indexOf('<')>-1||k.indexOf(')')>-1||k.indexOf('>')>-1){alert('页面地址中包含非法参数。');return false;}
+			else if(obj[k].indexOf('javascript')>-1||obj[k].indexOf('domxssExecutionSink')>-1||obj[k].indexOf('script')>-1||obj[k].indexOf('alert')>-1||obj[k].indexOf('(')>-1||obj[k].indexOf('<')>-1||obj[k].indexOf(')')>-1||obj[k].indexOf('>')>-1){alert('页面地址中包含非法参数。');return false;}
+			else if((typeof obj[k])=="number"||((typeof obj[k])=="string"&&obj[k].length>0)){temp+=("&"+k+"="+obj[k]);}
+			}
+		}*/
+	}
+	return temp;
+}
+/**
+ +----------------------------------------------------------
+ * 设置分页
+ +----------------------------------------------------------
+ */
+function setpaging(n,total,size,param){
+	var pagesize=size||10;
+	var num=Math.ceil(total/pagesize);
+	var _n=Number(n);
+	if(num<=1){$("#pager").html('').hide();return false;}
+	if(param){pagesize+=param}
+	var configPara={
+		"begin":1,
+		"end":num
+		}
+	if(_n>=4){
+		if(num-5<_n&&_n<=num){configPara.begin=(num-10<1?1:num-10);}
+		else{configPara.begin=(_n-4<1?1:_n-4);}
+		}
+	if(_n+5<=num){
+		if(_n==1){configPara.end=_n+9>num?num:_n+9;}
+		else if(_n>1&&configPara.begin==1){configPara.end=_n+10-_n>num?num:_n+10-_n;}
+		else{configPara.end=_n+5;}
+		}
+	//console.log(configPara.begin,configPara.end);
+	//console.log(num);
+	var _html='',html2='';
+	for(var i=configPara.begin;i<=configPara.end;i++){
+		if(i==n){_html+='<a href="javascript:void(0);" class="current">'+(i)+'</a>';}
+		else{_html+='<a href="?page='+i+'&n='+pagesize+'">'+(i)+'</a>';}
+		}
+	if(n==1){html2='<span>首页</span><span>上一页</span>'+_html+(num>i-1?'<span>...</span>':'')+'<a href="?page=2&n='+pagesize+'">下一页</a><a href="?page='+(num)+'&n='+pagesize+'">末页</a>';}
+	else if(n==num){html2='<a href="?page=1&n='+pagesize+'">首页</a><a href="?page='+(n-1)+'&n='+pagesize+'">上一页</a>'+(num>i-1||configPara.begin>1?'<span>...</span>':'')+_html+'<span>下一页</span><span>末页</span>';}
+	else{html2='<a href="?page=1&n='+pagesize+'">首页</a><a href="?page='+(n-1)+'&n='+pagesize+'">上一页</a>'+(i>5&&configPara.begin>1?'<span>...</span>':'')+_html+(i-1<num?'<span>...</span>':'')+'<a href="?page='+(n-0+1)+'&n='+pagesize+'">下一页</a><a href="?page='+(num)+'&n='+pagesize+'">末页</a>';}
+	if(num>1){
+		$("#pager").html(html2).show();
+		}
+	}
+	
+	
+/*设置视频*/
+function initVideoHtml(){
+	var videohtm='<div id="mask"></div>\
+  <div class="popbox">\
+      <div class="popcontbox">\
+          <div id="playVideoBox"></div>\
+          <div class="txt-bg1"></div>\
+          <p class="txt1 videoText">标题</p>\
+      </div>\
+      <a href="javascript:void(0);" class="close" title="关闭"></a>\
+  </div>';
+	$("body").append(videohtm);
+}
+initVideoHtml();
+//弹出视频
+
+function playVideo(_flv,txt){
+	var videoFlashHtml='<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="100%" height="100%">\
+    <param name="movie" value="http://media.static.sdo.com/qyz/qyz_act/201003_jmh/vcastr2.swf">\
+    <param name="quality" value="high">\
+    <param name="menu" value="false">\
+    <param name="allowScriptAccess" value="always">\
+    <param name="allowFullScreen" value="true">\
+    <param name="wMode" value="opaque">\
+    <param name="FlashVars" value="vcastr_file=https://static.web.sdo.com/mir2/pic/mir2_act/2018Movie/2018Movie.flv&amp;vcastr_title=&amp;vcastr_config=0:自动播放|0:连续播放|1:默认音量|0:控制栏位置|1:控制栏显示|0x000033:主体颜色|20:主体透明度|0x66ff00:光晕颜色|0xffffff:图标颜色|0xffffff:文字颜色|:logo文字|:logo地址|:结束swf地址">\
+    <embed src="http://media.static.sdo.com/qyz/qyz_act/201003_jmh/vcastr2.swf" wmode="opaque" flashvars="vcastr_file=https://static.web.sdo.com/jijiamobile/pic/ah/web1/Ahvideo02.flv&amp;vcastr_title=&amp;vcastr_config=0:自动播放|0:连续播放|1:默认音量|0:控制栏位置|1:控制栏显示|0x000033:主体颜色|20:主体透明度|0x66ff00:光晕颜色|0xffffff:图标颜色|0xffffff:文字颜色|:logo文字|:logo地址|:结束swf地址" menu="false" quality="high" width="100%" height="100%" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed>\
+  </object>';
+	var videoMp4Html='<video preload="preload" controls height="100%" width="100%"><source src="https://static.web.sdo.com/mir2/media/20220929.mkv" type="video/mkv"><source src="https://static.web.sdo.com/mir2/media/20220929.mp4" type="video/mp4"></video>';
+	var videohtml=null;
+	var isIE789=(!document.getElementsByClassName||window.navigator.userAgent.indexOf("MSIE")>=1);
+	if(isIE789){videohtml=videoFlashHtml;}
+	else{videohtml=videoMp4Html;}
+
+	var mar_top=document.body.scrollTop||document.documentElement.scrollTop;
+	//get_width();
+	$("#mask").show().height($(document).height());
+	$('.videoText').html(txt);
+	//get_height();
+	$("body>.popbox").css("marginTop",mar_top-255+"px").slideDown(800,function(){$("#playVideoBox").html(videohtml);});
+	//$("#SDGUNIGUIDE").css({"z-index":"10"});
+	$("body>.popbox>a.close")[0].onclick=function(){
+		$("#mask").hide();
+		$("body>.popbox").slideUp(600,function(){$(this).removeAttr("style");$("#playVideoBox").html("");});
+	}
+}
